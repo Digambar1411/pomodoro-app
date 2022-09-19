@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate, NavLink } from "react-router-dom";
-import { useAuth } from "../../contexts";
+import { Link, NavLink } from "react-router-dom";
+// import { useAuth } from "../../contexts";
 import axios from "axios";
 import "./auth.css";
 
 export function Login() {
-	const navigate = useNavigate();
-	const { dispatchAuth } = useAuth();
+	// const navigate = useNavigate();
+	// const { dispatchAuth } = useAuth();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 

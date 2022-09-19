@@ -1,4 +1,4 @@
-import {useContext,createContext,useState,useEffect,useReducer,} from "react";
+import {useContext,createContext,useReducer,} from "react";
 import axios from "axios";
 
 const AuthContext = createContext();
@@ -36,13 +36,15 @@ const AuthProvider = ({ children }) => {
 				return { state };
 			case "LOGOUT":
 				return { ...state, authState: false };
+            default :
+            return { state };
 		}
 	};
 
 	const [authState, authDispatch] = useReducer(initialValue, authReducerFunc);
 
 	return (
-		<AuthContext.Provider value={{ authState, useAuth, loginHandler }}>
+		<AuthContext.Provider value={{ authState, useAuth, loginHandler,authDispatch }}>
 			{children}
 		</AuthContext.Provider>
 	);

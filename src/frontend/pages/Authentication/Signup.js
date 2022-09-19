@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate, NavLink } from "react-router-dom";
-import { useAuth } from "../../contexts";
+import { Link , NavLink} from "react-router-dom";
+// import { useAuth } from "../../contexts";
 // import { SignupService } from "../../services";
 import "./auth.css";
 
@@ -11,8 +11,8 @@ export function Signup() {
 	const [lastName, setLastname] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
-	const navigate = useNavigate();
-	const { dispatchAuth } = useAuth();
+	// const navigate = useNavigate();
+	// const { dispatchAuth } = useAuth();
 
 	const SignUpHandler = async (e) => {
 		e.preventDefault();
