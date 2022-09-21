@@ -1,0 +1,32 @@
+.aside {
+	position: sticky;
+	top: 5rem;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 3rem 0;
+}
+
+.material-icons,
+.material-icons-outlined {
+	cursor: pointer;
+}
+
+.side-bar-menu {
+	font-size: 1.25rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1rem 3rem;
+	color: var(--font-color);
+	text-decoration: none;
+}
+
+.menu-text {
+	margin-left: 1.5rem;
+}
+
+.active-link {
+	color: var(--brand-color);
+}

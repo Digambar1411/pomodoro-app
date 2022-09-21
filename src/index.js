@@ -1,15 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom"
+import { createRoot } from 'react-dom/client';
+import { ThemeProvider, AuthProvider } from "./frontend/contexts";
 
 // Call make Server
 makeServer();
-ReactDOM.render(
+const root=createRoot(document.getElementById("root"));
+root.render(
   <BrowserRouter>
-      <App />
-  </BrowserRouter>,
-  document.getElementById("root")
+    <ThemeProvider>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </ThemeProvider>
+  </BrowserRouter>
 );

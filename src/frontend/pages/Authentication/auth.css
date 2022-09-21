@@ -1,0 +1,180 @@
+* {
+	color: var(--font-color);
+}
+
+.main-auth-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.login-page {
+	background-color: var(--primary-background-color);
+	width: 100%;
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-card {
+	margin: 2rem;
+	width: 70%;
+	max-width: 380px;
+	background-color: var(--secondary-background-color);
+	border-radius: 4px;
+	height: fit-content;
+	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
+	font-size: 1rem;
+	padding-bottom: 3rem;
+}
+
+.form {
+	padding: 3rem 3rem 1rem;
+}
+
+.auth-heading {
+	text-align: center;
+	font-size: 1.75rem;
+	color: var(--font-color);
+	padding: 0.5rem 0;
+	font-weight: bold;
+	width: 50%;
+	background-color: var(--brand-color);
+	text-decoration: none;
+}
+
+.active {
+	background: none;
+}
+
+.heading {
+	display: flex;
+	justify-content: space-around;
+}
+
+.input-div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input:focus {
+	outline: none;
+	border: 1px solid var(--brand-color);
+}
+
+.input {
+	padding: 4px 8px;
+	border: 1px solid var(--light-border-color);
+	border-radius: 4px;
+	font-size: 1.1rem;
+	color: var(--font-color);
+}
+
+.input-label {
+	font-size: 1rem;
+}
+
+.checkbox-input-label {
+	display: flex;
+}
+
+input {
+	background-color: var(--primary-background-color);
+}
+
+input[type="checkbox"] {
+	accent-color: var(--brand-color);
+}
+
+.input-checkbox {
+	height: 1rem;
+	width: 1rem;
+	margin-right: 0.4rem;
+}
+
+.link-forgot-password {
+	text-decoration: none;
+	color: var(--color-primary);
+	font-size: 0.75rem;
+}
+
+.password-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.auth-btns {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.auth-btn {
+	padding: 4px;
+	width: 90%;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.25rem;
+	margin: 0rem auto;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.login {
+	background-color: var(--secondary-background-color);
+	border: 1px solid var(--brand-color);
+}
+
+.guest-login-btn,
+.signup {
+	background-color: var(--brand-color);
+}
+
+.auth-control-btn {
+	display: flex;
+	font-size: 1rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--brand-color);
+	justify-content: center;
+}
+
+.auth-controls {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.flex-col-login {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.flex-center-login {
+	flex-direction: row;
+	gap: 2px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-left {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.control-icon {
+	font-size: 1rem;
+	margin-left: 4px;
+}
+
+Link {
+	text-decoration: none;
+}
