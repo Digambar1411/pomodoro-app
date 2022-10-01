@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link , NavLink} from "react-router-dom";
-// import { useAuth } from "../../contexts";
-// import { SignupService } from "../../services";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts";
+import { SignupService } from "../../services";
 import "./auth.css";
 
 export function Signup() {
@@ -11,29 +11,35 @@ export function Signup() {
 	const [lastName, setLastname] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
-	// const navigate = useNavigate();
-	// const { dispatchAuth } = useAuth();
+	const navigate = useNavigate();
+	const { authDispatch } = useAuth();
 
 	const SignUpHandler = async (e) => {
 		e.preventDefault();
-		// try{
-		//     const response = await SignupService(firstName, lastName, email, password);
-		//     if(response.status===201){
-		//         console.log(response.data)
-		//         localStorage.setItem("auth_token", response.data.encodedToken);
-		//         localStorage.setItem("auth_user", JSON.stringify({
-		//             firstName:response.data.createdUser.firstName,
-		//             lastName:response.data.createdUser.lastName,
-		//             email:response.data.createdUser.email
-		//         }))
-		//         dispatchAuth({type:"SIGNUP"})
-		//         navigate("/")
-		//     }
-		// }
-
-		// catch(error){
-		//     console.log(error);
-		// }
+		try {
+			const response = await SignupService(
+				firstName,
+				lastName,
+				email,
+				password
+			);
+			console.log(response);
+			if (response.status === 201) {
+				localStorage.setItem("auth_token", response.data.encodedToken);
+				localStorage.setItem(
+					"auth_user",
+					JSON.stringify({
+						firstName: response.data.createdUser.firstName,
+						lastName: response.data.createdUser.lastName,
+						email: response.data.createdUser.email,
+					})
+				);
+				authDispatch({ type: "SIGNUP" });
+				navigate("/");
+			}
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
@@ -149,7 +155,9 @@ export function Signup() {
 				</div>
 
 				<div>
-					<button className="auth-btn signup">Create account</button>
+					<button type="submit" className="btn solid">
+						Create account
+					</button>
 				</div>
 			</form>
 

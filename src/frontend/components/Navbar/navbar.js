@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 
 export function Navbar() {
 	const { toggleTheme, theme } = useTheme();
-	const { isLoggedIn } = useAuth();
+	const { authState:{isLoggedIn} } = useAuth();
 	const navigate = useNavigate();
 
 	return (
