@@ -1,0 +1,59 @@
+* {
+	color: var(--font-color);
+}
+
+.taskcard{
+    width: 200px;
+    height: max-content;;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--background-accent);
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    left: 50%;;
+    top:20%;
+    flex-direction:column;
+    gap: 1rem;
+    border: 1px solid var(--light-border-color);
+}
+
+.solid{
+    background-color: var(--brand-color);
+}
+
+.description{
+    height: 150px;
+  
+}
+
+input[type="textarea"]::placeholder{
+    position: relative;
+    left: 20px;
+    top: 18px;
+}
+
+.btn-w50{
+    padding: 4px;
+    width: 40%;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.25rem;
+	margin: 0rem auto;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
