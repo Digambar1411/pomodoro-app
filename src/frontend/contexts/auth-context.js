@@ -1,50 +1,51 @@
-import {useContext,createContext,useReducer,} from "react";
-import axios from "axios";
+import {useContext,createContext,useReducer} from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 const useAuth = () => useContext(AuthContext);
 
+
 const AuthProvider = ({ children }) => {
-	const loginService = async (email, password) => {
-		try {
-			const response = await axios.get("/api/login", {
-				email,
-				password,
-			});
-			return response;
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	const loginHandler = async () => {
-		const response = await loginService(
-			"adarshbalika@gmail.com",
-			"adarshBalika123"
-		);
-		console.log(response);
-	};
-
+	const navigate = useNavigate();
+	
 	const initialValue = {
-		authState: localStorage.getItem("token") ? true : false,
-		user: localStorage.getItem("user") || [],
+		isLoggedIn: localStorage.getItem("auth_token") ? true : false,
+		user: JSON.parse(localStorage.getItem("auth_user")),
+		token:localStorage.getItem("auth_token")
 	};
 
-	const authReducerFunc = (state, action) => {
+
+	const logoutHandler=()=>{
+		localStorage.removeItem("auth_user")
+		localStorage.removeItem("auth_token")
+		authDispatch({type:"LOGOUT"})
+		navigate("/login")
+	}
+
+	const authReducerFunc = (authState, action) => {
 		switch (action.type) {
 			case "LOGIN":
-				return { state };
+				return { ...authState, 
+					isLoggedIn: true,
+					user:JSON.parse(localStorage.getItem("auth_user"))};
+
+			case "SIGNUP":
+				return { ...authState, 
+					isLoggedIn: true,
+					user:JSON.parse(localStorage.getItem("auth_user"))};
+
 			case "LOGOUT":
-				return { ...state, authState: false };
+				return { ...authState, 
+					isLoggedIn: false };
             default :
-            return { state };
+            return authState;
 		}
 	};
 
-	const [authState, authDispatch] = useReducer(initialValue, authReducerFunc);
+	const [authState, authDispatch] = useReducer(authReducerFunc,initialValue);
 
 	return (
-		<AuthContext.Provider value={{ authState, useAuth, loginHandler,authDispatch }}>
+		<AuthContext.Provider value={{ authState, useAuth , authDispatch, logoutHandler }}>
 			{children}
 		</AuthContext.Provider>
 	);
