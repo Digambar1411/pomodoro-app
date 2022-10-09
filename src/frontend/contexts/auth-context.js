@@ -4,16 +4,14 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 const useAuth = () => useContext(AuthContext);
 
-
 const AuthProvider = ({ children }) => {
 	const navigate = useNavigate();
 	
 	const initialValue = {
 		isLoggedIn: localStorage.getItem("auth_token") ? true : false,
-		user: JSON.parse(localStorage.getItem("auth_user")),
+		user: JSON.parse(localStorage.getItem("auth_user"))||[],
 		token:localStorage.getItem("auth_token")
 	};
-
 
 	const logoutHandler=()=>{
 		localStorage.removeItem("auth_user")
@@ -33,12 +31,12 @@ const AuthProvider = ({ children }) => {
 				return { ...authState, 
 					isLoggedIn: true,
 					user:JSON.parse(localStorage.getItem("auth_user"))};
-
+				
 			case "LOGOUT":
 				return { ...authState, 
 					isLoggedIn: false };
             default :
-            return authState;
+            	return authState;
 		}
 	};
 
