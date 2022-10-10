@@ -2,7 +2,6 @@ import "./aside.css";
 import { NavLink } from "react-router-dom";
 
 export function Aside() {
-	// const { stateAuth :{isLoggedIn}} = useAuth();
 	const sidebarMenuClass = ({ isActive }) =>
 		isActive ? "side-bar-menu active-link" : "side-bar-menu";
 
@@ -18,13 +17,6 @@ export function Aside() {
 					<span className="material-icons-outlined md-30">alarm_on</span>
 					<div className="menu-text"> Timer</div>
 				</NavLink>
-
-				{/* <NavLink to="/settings" className={sidebarMenuClass}>
-                <span className="material-icons-outlined md-30">
-                settings
-                </span>
-               <div className="menu-text">Settings</div>
-            </NavLink> */}
 
 				<NavLink to="/user-profile" className={sidebarMenuClass}>
 					<span className="material-icons-outlined md-30">account_circle</span>

@@ -34,11 +34,10 @@ export const Timer = ({ task }) => {
 	useEffect(() => {
 		if (timerOn) {
 			if (value >0) {
-				document.title = getTime(value);
 				const intervalId = setInterval(() => {
 					setValue((initialTimer) => initialTimer - 1);
 				}, 1000);
-				
+				document.title = getTime(value);
 				return () => clearInterval(intervalId);
 			}
 		}
@@ -55,7 +54,7 @@ export const Timer = ({ task }) => {
 		if(breakOn){
 			setProgress(()=>value/(defaultBreak/100))
 		}
-	},[value])
+	},[value]) // eslint-disable-line react-hooks/exhaustive-deps
 	
 	return (
 		<>

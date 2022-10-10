@@ -11,9 +11,7 @@ export const Pomodoro = () => {
 	return (
 		<>
 			<div className="pomodor-page">
-				<Timer
-					task={selectedTask}
-				/>
+				<Timer task={selectedTask} />
 			</div>
 		</>
 	);
