@@ -25,7 +25,6 @@ export const Task = () => {
 	const deleteTask = async (id) => {
 		try {
 			const response = await DeleteTaskService(token, id);
-			console.log(response);
 			taskDispatch({
 				type: "UPDATE_TASK",
 				payload: response.data.habits
@@ -39,7 +38,6 @@ export const Task = () => {
 		const getAllTask = async () => {
 			try {
 				const response = await GetTaskService(token);
-				console.log(response);
 				taskDispatch({
 					type: "UPDATE_TASK",
 					payload: response.data.habits,
@@ -49,8 +47,7 @@ export const Task = () => {
 			}
 		};
 		getAllTask();
-	}, []);
-
+	}, [taskDispatch]); // eslint-disable-line react-hooks/exhaustive-deps
 	return (
 		<>
 			<div className="task-page">

@@ -1,7 +1,3 @@
-* {
-	color: var(--font-color);
-}
-
 .main-auth-page {
 	display: flex;
 	flex-direction: column;
