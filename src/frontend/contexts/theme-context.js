@@ -3,8 +3,6 @@ import { useContext, createContext, useState, useEffect, useLayoutEffect} from "
 const ThemeContext = createContext();
 const useTheme =()=>useContext(ThemeContext);
 
-
-
 const ThemeProvider =({children})=>{
 
     const preferColorSchemeQuery = "(prefers-color-scheme:dark)";
@@ -16,7 +14,6 @@ const ThemeProvider =({children})=>{
     const [theme, setTheme] = useState(()=>giveInitialTheme());
 
     const toggleTheme = ()=>{
-        console.log(theme)
         setTheme((theme)=>(theme === "light" ? "dark" : "light"))
     }
 

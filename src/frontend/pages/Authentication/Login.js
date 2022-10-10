@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-// import { useAuth } from "../../contexts";
-import axios from "axios";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts";
+import { LoginService } from "../../services";
 import "./auth.css";
 
 export function Login() {
-	// const navigate = useNavigate();
-	// const { dispatchAuth } = useAuth();
+	const navigate = useNavigate();
+	const { authDispatch } = useAuth();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -15,38 +15,26 @@ export function Login() {
 		setPassword("123456");
 	};
 
-	const loginService = async (userEmail, userPassword) => {
-		try {
-			const response = await axios.post("/api/auth/login", {
-				userEmail,
-				userPassword,
-			});
-			return response;
-		} catch (error) {
-			console.log(error);
+	const LoginHandler = async (e) => {
+		e.preventDefault();
+		const loginResponse = await LoginService(email, password);
+		if (loginResponse.status === 200) {
+			localStorage.setItem("auth_token", loginResponse.data.encodedToken);
+			localStorage.setItem(
+				"auth_user",
+				JSON.stringify({
+					firstName: loginResponse.data.foundUser.firstName,
+					lastName: loginResponse.data.foundUser.lastName,
+					email: loginResponse.data.foundUser.email,
+				})
+			);
+
+			authDispatch({ type: "LOGIN" });
+			navigate("/");
 		}
 	};
 
-	const LoginHandler = async (e) => {
-		e.preventDefault();
-		console.log(email);
-		console.log(password);
-		const loginResponse = await loginService(email, password);
-		// if(response.status===200){
-		console.log(loginResponse);
-		//     localStorage.setItem("auth_token", response.data.encodedToken);
-		//     localStorage.setItem("auth_user", JSON.stringify({
-		//         firstName:response.data.foundUser.firstName,
-		//         lastName:response.data.foundUser.lastName,
-		//         email:response.data.foundUser.email}
-		//      ));
-		//     dispatchAuth({type:"LOGIN"})
-		//     navigate("/");
-		// }
-	};
-
 	return (
-		// <div className="main-auth-page">
 		<div className="login-card">
 			<div className="heading">
 				<NavLink
@@ -100,8 +88,8 @@ export function Login() {
 				</div>
 
 				<div className="auth-btns">
-					<button className="auth-btn login">Login</button>
-					<button className="auth-btn guest-login-btn" onClick={guestLogin}>
+					<button className="btn outline">Login</button>
+					<button className="btn solid" type="submit" onClick={guestLogin}>
 						Guest Login
 					</button>
 				</div>
@@ -114,7 +102,5 @@ export function Login() {
 				</Link>
 			</div>
 		</div>
-
-		// </div>
 	);
 }

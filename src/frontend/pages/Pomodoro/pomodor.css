@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+.outer-div{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: conic-gradient(var(--brand-color) 90%, #93f5b2 1%);
+    display: grid;
+    place-items: center;
+}
+
+.inner-div{
+    width:250px;
+    height:250px;
+    border-radius:50%; 
+    background-color: var(--primary-background-color);
+    display: grid;
+    place-items: center;
+
+}
+
+.inner-content{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.pomodor-time{
+    font-size: 2.5rem;
+}
+
+.pomodor-default{
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+.bold{
+    font-weight: bold;
+}

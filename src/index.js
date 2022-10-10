@@ -4,7 +4,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom"
 import { createRoot } from 'react-dom/client';
-import { ThemeProvider, AuthProvider } from "./frontend/contexts";
+import { ThemeProvider, AuthProvider, TaskProvider } from "./frontend/contexts";
 
 // Call make Server
 makeServer();
@@ -13,7 +13,9 @@ root.render(
   <BrowserRouter>
     <ThemeProvider>
       <AuthProvider>
-        <App />
+        <TaskProvider>
+          <App />
+        </TaskProvider>
       </AuthProvider>
     </ThemeProvider>
   </BrowserRouter>

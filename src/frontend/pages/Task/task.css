@@ -31,12 +31,12 @@
 	gap: 1.5rem;
 }
 
-.add-btn {
+.add-btn-circle {
 	padding: 0.5rem;
 	border-radius: 50%;
 }
 
-.add-btn:hover {
+.add-btn-circle:hover {
 	background-color: var(--brand-color);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .task-input-checkbox {
-	height: 1.25rem;
-	width: 1.25rem;
+	height: 1rem;
+	width: 1rem;
 	margin-right: 0.5rem;
 }
