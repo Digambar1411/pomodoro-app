@@ -9,7 +9,7 @@
 }
 
 .profile-div{
-    width: 350px;
+    width: 21rem;
     height: max-content;
     border: 1px solid var(--brand-color);
     padding: 1rem;
@@ -26,6 +26,32 @@
 .profile-div div,
 .profile-div p{
     letter-spacing: 1px;
+}
+
+@media only screen and (min-width:284px) and (max-width:540px){  
+	.profile-div{
+        width: 90%;
+        padding: 0.5rem;
+        max-width: 19rem;
+    }
+
+    .user-card-heading{
+        font-size:1.25rem;
+    }
+}
+
+@media only screen and (min-width:541px) and (max-width:767px){  
+	.profile-div{
+        width: 70%;
+        padding: 0.5rem;
+        max-width: 19rem;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1199px){  
+    .profile-div{
+        width: 20rem;
+    }
 }
 
 

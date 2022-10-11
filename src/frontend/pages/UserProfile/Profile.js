@@ -7,7 +7,7 @@ export const Profile =()=>{
 
     return(
         <>
-            <div className="profile-page">
+            <div className="profile-page center">
                 <div className="profile-div center">
                     <div className="user-card-heading">User Details</div>
                     <p><strong>FirstName : </strong>{user.firstName}</p>

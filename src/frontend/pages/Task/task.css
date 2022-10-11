@@ -6,23 +6,23 @@
 
 .main-container{
 	width: 90%;
-	margin: 0rem auto;
+	margin: 0 auto;
 }
 
 .task-header-default{
 	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .task-container {
 	background-color: var(--secondary-background-color);
-	width: 90%;
 	height: max-content;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
 	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
-	margin-top: 1.5rem;
+	box-sizing: border-box;
 }
 
 .header {
@@ -75,4 +75,49 @@
 
 .fs-20{
 	font-size:1.25rem;
+}
+
+
+@media only screen and (min-width:284px) and (max-width:540px){  
+	.main-container{
+		width: 98%;
+		margin: 0 auto;
+	}
+
+	.fs-20{
+		font-size:1.25rem;
+	}
+
+	.task-container {
+		padding: 1rem;
+	}
+
+	.task-lists {
+		gap: 0.5rem;
+	}
+	.task-header-default{
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+
+}
+
+@media only screen and (min-width:541px) and (max-width:767px){  
+	.main-container{
+		width: 98%;
+		margin: 0 auto;
+	}
+
+	.task-container {
+		padding: 1.25rem;
+	}
+
+	.task-lists {
+		gap: 0.75rem;
+	}
+
+	.task-header-default{
+		font-size: 1.25rem;
+		margin-bottom: 1.25rem;
+	}
 }
