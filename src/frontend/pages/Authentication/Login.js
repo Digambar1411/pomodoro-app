@@ -35,71 +35,73 @@ export function Login() {
 	};
 
 	return (
-		<div className="login-card">
-			<div className="heading">
-				<NavLink
-					className={({ isActive }) =>
-						isActive ? "auth-heading active" : "auth-heading"
-					}
-					to="/login"
-				>
-					Login
-				</NavLink>
+		<div className="login-page">
+			<div className="login-card">
+				<div className="heading">
+					<NavLink
+						className={({ isActive }) =>
+							isActive ? "auth-heading active" : "auth-heading"
+						}
+						to="/login"
+					>
+						Login
+					</NavLink>
 
-				<NavLink
-					className={({ isActive }) =>
-						isActive ? "auth-heading active" : "auth-heading"
-					}
-					to="/signup"
-				>
-					Sign up
-				</NavLink>
-			</div>
-
-			<form className="flex-col-login form" onSubmit={LoginHandler}>
-				<div className="input-div">
-					<label className="input-label" htmlFor="email">
-						Email address
-					</label>
-					<input
-						className="input"
-						id="email"
-						type="email"
-						placeholder="john@edu.com"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-						required
-					/>
+					<NavLink
+						className={({ isActive }) =>
+							isActive ? "auth-heading active" : "auth-heading"
+						}
+						to="/signup"
+					>
+						Sign up
+					</NavLink>
 				</div>
 
-				<div className="input-div">
-					<label className="input-label" htmlFor="password">
-						Password
-					</label>
-					<input
-						className="input"
-						id="password"
-						placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-						type="password"
-						onChange={(e) => setPassword(e.target.value)}
-						value={password}
-						required
-					/>
-				</div>
+				<form className="flex-col-login form" onSubmit={LoginHandler}>
+					<div className="input-div">
+						<label className="input-label" htmlFor="email">
+							Email address
+						</label>
+						<input
+							className="input"
+							id="email"
+							type="email"
+							placeholder="john@edu.com"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							required
+						/>
+					</div>
 
-				<div className="auth-btns">
-					<button className="btn outline">Login</button>
-					<button className="btn solid" type="submit" onClick={guestLogin}>
-						Guest Login
-					</button>
-				</div>
-			</form>
+					<div className="input-div">
+						<label className="input-label" htmlFor="password">
+							Password
+						</label>
+						<input
+							className="input"
+							id="password"
+							placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+							type="password"
+							onChange={(e) => setPassword(e.target.value)}
+							value={password}
+							required
+						/>
+					</div>
 
-			<div className="auth-controls">
-				<span>Dont have account?</span>
-				<Link className="auth-control-btn" to="/signup">
-					Signup
-				</Link>
+					<div className="auth-btns">
+						<button className="btn outline">Login</button>
+						<button className="btn solid" type="submit" onClick={guestLogin}>
+							Guest Login
+						</button>
+					</div>
+				</form>
+
+				<div className="auth-controls">
+					<span>Dont have account?</span>
+					<Link className="auth-control-btn" to="/signup">
+						Signup
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

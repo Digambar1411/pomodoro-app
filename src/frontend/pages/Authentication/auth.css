@@ -1,13 +1,19 @@
+.login-page{
+	padding: 2rem;
+	width: 100%;
+	box-sizing: border-box;
+}
+
 .login-card {
-	margin: 0 auto;
+	margin: 0rem auto;
 	width: 70%;
 	max-width: 380px;
 	background-color: var(--secondary-background-color);
 	border-radius: 4px;
 	height: fit-content;
-	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
+	box-shadow: 0 4px 4px 0 rgba(11, 11, 11, 0.2);
 	font-size: 1rem;
-	padding-bottom: 3rem;
+	padding-bottom: 2rem;
 }
 
 .form {
