@@ -72,3 +72,23 @@
     width:2.5rem;
     height:2.5rem;
 }
+
+
+@media only screen and (min-width:284px) and (max-width:540px){  
+	.container{
+        gap: 2.5rem;
+    }
+
+    .outer-div{
+        height: 15.5rem;
+        width: 15.5rem;
+    }
+    
+    .inner-div{
+        height: 13rem;
+        width: 13rem;
+    }
+}
+
+
+

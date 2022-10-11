@@ -62,7 +62,7 @@ export const Task = () => {
 
 					<div className="task-container flex-col">
 						<div className="header space-btwn">
-							<h2>To-Do-List</h2>
+							<p className="to-do-title">To-Do-List</p>
 							<h2
 								className="add-btn material-icons-outlined md-30"
 								onClick={toggleTaskCard}

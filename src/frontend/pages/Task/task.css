@@ -26,7 +26,12 @@
 }
 
 .header {
-	margin-bottom: 2rem;
+	margin-bottom: 1.75rem;
+}
+
+.to-do-title{
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .space-btwn {
@@ -85,7 +90,7 @@
 	}
 
 	.fs-20{
-		font-size:1.25rem;
+		font-size:1rem;
 	}
 
 	.task-container {
@@ -98,6 +103,18 @@
 	.task-header-default{
 		font-size: 1rem;
 		margin-bottom: 1rem;
+	}
+
+	.to-do-title{
+		font-size: 1.3rem;
+	}
+
+	.md-30{
+		font-size:1.65rem;
+	}
+
+	.task-control-btn{
+		padding: 4px;
 	}
 
 }
