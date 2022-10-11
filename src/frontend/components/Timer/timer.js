@@ -27,7 +27,7 @@ export const Timer = ({ task }) => {
 
 	const stratWork = ()=>{
 		setBreakOn(false)
-		setTimerOn(true)
+		setTimerOn(false)
 		setValue(initialTimer);
 	}
 
@@ -37,11 +37,14 @@ export const Timer = ({ task }) => {
 				const intervalId = setInterval(() => {
 					setValue((initialTimer) => initialTimer - 1);
 				}, 1000);
-				document.title = getTime(value);
 				return () => clearInterval(intervalId);
-			}
+			}		
 		}
-	}, [timerOn, value]);
+	}, [timerOn, value]); // eslint-disable-line react-hooks/exhaustive-deps
+
+	useEffect(()=>{
+		document.title ="Pomodor | "+ getTime(value);
+	},[value])
 
 	const getTime = (time) => {
 		let min = Math.floor(time / 60);
@@ -61,30 +64,30 @@ export const Timer = ({ task }) => {
 			<div className="container">
 				<div className="outer-div" style={{background:`conic-gradient(#1DB954 ${progress}%, #cff4db 1%)`}}>
 					<div className="inner-div">
-						<div className="inner-content">
+						<div className="inner-content center">
 							<p className="pomodor-time bold">{getTime(value)}</p>
-							<p className="pomodor-default bold center">
-								{breakOn ? "Break" : "Focus"}
+							<p className="pomodor-default-title bold center">
+								{breakOn ? "Break" : "Work"}
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div className="pomodor-controls">
+				<div className="pomodor-controls center">
+						<span disabled={true}
+							className="material-icons-outlined center timer-btn secondary"
+							onClick={resetTimer}
+						>
+							replay
+						</span>
 					<span
-						className="material-icons-outlined md-30 task-control-btn"
-						onClick={resetTimer}
-					>
-						replay
-					</span>
-					<span
-						className="material-icons-outlined md-30 task-control-btn"
+						className="material-icons center timer-btn primary"
 						onClick={toggleTimer}
 					>
-						{timerOn ? "pause_circle" : "play_circle"}
+						{timerOn ? "pause" : "play_arrow"}
 					</span>
 					<span
-						className="material-icons-outlined md-30 task-control-btn"
+						className="material-icons-outlined center timer-btn secondary"
 						onClick={breakOn ? stratWork : startBreak}
 					>
 						skip_next

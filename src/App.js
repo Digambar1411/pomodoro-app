@@ -1,9 +1,10 @@
 import "./App.css";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route,useLocation} from "react-router-dom";
 import { Home, Pomodoro, Task, Login, Signup, Profile} from "./frontend/pages/index";
 import {Navbar, Myfooter, Aside, PrivateRoutes} from "./frontend/components/index";
 
 function App() {
+  const { pathname}= useLocation();
   return (
     <>
       <div className="app">
@@ -33,7 +34,7 @@ function App() {
                   </PrivateRoutes>} 
                 />
               </Routes>
-             <Myfooter />
+             {pathname==="/" ? <Myfooter /> : ""}
           </div>
         </div>
       </div>

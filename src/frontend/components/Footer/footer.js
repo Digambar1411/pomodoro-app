@@ -3,11 +3,11 @@ import github from "../../assets/github.png";
 import twitter from "../../assets/twitter.png";
 import linkedin from "../../assets/linkedin.png";
 
-export function Footer() {
+export function Myfooter() {
 	return (
 		<>
 			<div className="video-lib-footer">
-				<p className="footer-heading">Digambar Deshawal</p>
+				<p className="footer-heading">Made with love by Digambar</p>
 				<section className="social-handles">
 					<a
 						href="https://twitter.com/deshawald14"
