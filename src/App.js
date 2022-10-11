@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route} from "react-router-dom";
 import { Home, Pomodoro, Task, Login, Signup, Profile} from "./frontend/pages/index";
-import {Navbar, Footer, Aside, PrivateRoutes} from "./frontend/components/index";
+import {Navbar, Myfooter, Aside, PrivateRoutes} from "./frontend/components/index";
 
 function App() {
   return (
@@ -9,8 +9,8 @@ function App() {
       <div className="app">
         <Navbar />
         <div className="main-body-container">
-          <Aside />
-          <div className="main-page">
+            <Aside />
+          <div className="main-page center">
               <Routes>
                 <Route path="/" element={ <Home />} />
                 <Route path="/login" element={ <Login />} />
@@ -32,10 +32,10 @@ function App() {
                     <Profile />
                   </PrivateRoutes>} 
                 />
-                </Routes>
+              </Routes>
+             <Myfooter />
           </div>
         </div>
-        <Footer />
       </div>
     </>
     

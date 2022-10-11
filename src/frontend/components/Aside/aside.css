@@ -1,12 +1,13 @@
 .aside {
 	position: sticky;
-	top: 5rem;
-	height: max-content;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
-	padding: 3rem 0;
+	justify-content: center;
+	box-sizing: border-box;
 }
+
 
 .material-icons,
 .material-icons-outlined {

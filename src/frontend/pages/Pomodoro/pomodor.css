@@ -5,7 +5,6 @@
     align-items: center;
     padding: 1rem;
     box-sizing: border-box;
-
 }
 
 .outer-div{
@@ -24,7 +23,6 @@
     background-color: var(--primary-background-color);
     display: grid;
     place-items: center;
-
 }
 
 .inner-content{
@@ -33,15 +31,44 @@
     padding: 1rem;
 }
 
+.pomodor-controls{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .pomodor-time{
     font-size: 2.5rem;
 }
 
 .pomodor-default{
     margin: 0 auto;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    letter-spacing:4px;
+    text-transform: uppercase;
 }
 
 .bold{
     font-weight: bold;
+}
+
+.timer-btn{
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.secondary{
+    border: 1px solid var(--font-color);
+    font-size: 1.5rem;
+    width:26px;
+    height:26px;
+}
+
+.primary{
+    color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+    font-size: 2rem;
+    width:40px;
+    height:40px;
 }
