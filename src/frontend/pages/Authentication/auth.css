@@ -1,19 +1,5 @@
-.main-auth-page {
-	display: flex;
-	flex-direction: column;
-}
-
-.login-page {
-	background-color: var(--primary-background-color);
-	width: 100%;
-	overflow: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .login-card {
-	margin: 2rem;
+	margin: 0 auto;
 	width: 70%;
 	max-width: 380px;
 	background-color: var(--secondary-background-color);
@@ -60,15 +46,11 @@
 }
 
 .input {
-	padding: 6px 8px;
+	padding:0.6rem 0.5rem;
 	border: 1px solid var(--light-border-color);
 	border-radius: 4px;
 	font-size: 1.1rem;
 	color: var(--font-color);
-}
-
-.input-label {
-	font-size: 1rem;
 }
 
 .checkbox-input-label {

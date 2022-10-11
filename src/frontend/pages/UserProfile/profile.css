@@ -1,13 +1,11 @@
-.profile-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
 .user-card-heading{
     font-size:1.5rem;
     font-weight: bold;
+}
+
+.profile-page{
+    padding: 1rem;
+	box-sizing: border-box;
 }
 
 .profile-div{
@@ -18,8 +16,6 @@
     display: flex;
     gap: 0.75rem;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
 }
 
@@ -27,5 +23,9 @@
     margin-top:0.75rem;
 }
 
+.profile-div div,
+.profile-div p{
+    letter-spacing: 1px;
+}
 
 

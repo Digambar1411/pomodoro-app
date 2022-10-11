@@ -1,17 +1,28 @@
 .task-page {
 	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+.main-container{
+	width: 90%;
+	margin: 0rem auto;
+}
+
+.task-header-default{
+	font-size: 1.5rem;
 }
 
 .task-container {
 	background-color: var(--secondary-background-color);
-	width: 80%;
+	width: 90%;
 	height: max-content;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	padding: 2rem;
-	margin: 2rem auto 0;
 	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
+	margin-top: 1.5rem;
 }
 
 .header {
@@ -60,4 +71,8 @@
 	height: 1rem;
 	width: 1rem;
 	margin-right: 0.5rem;
+}
+
+.fs-20{
+	font-size:1.25rem;
 }
