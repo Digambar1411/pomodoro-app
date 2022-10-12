@@ -13,21 +13,17 @@
     color: var(--font-color);
 }
 
-.main-body-container{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    box-sizing: border-box;
-}
-
 .main-page{
-    border-left: 1px solid var(--light-border-color);
+    margin-left: 240px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top:4rem;
+    padding-top:2rem;
     flex-grow: 1;
     box-sizing: border-box;
+    height: 100vh;
 }
+
 
 
 

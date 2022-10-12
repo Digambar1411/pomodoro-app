@@ -9,9 +9,9 @@ function App() {
     <>
       <div className="app">
         <Navbar />
-        <div className="main-body-container">
-            <Aside />
-          <div className="main-page center">
+        <div>
+          <Aside />
+          <div className="main-page">
               <Routes>
                 <Route path="/" element={ <Home />} />
                 <Route path="/login" element={ <Login />} />
