@@ -64,7 +64,7 @@ export const Task = () => {
 						<div className="header space-btwn">
 							<p className="to-do-title">To-Do-List</p>
 							<h2
-								className="add-btn material-icons-outlined md-30"
+								className="add-btn material-icons-outlined fs-30"
 								onClick={toggleTaskCard}
 							>
 								add
@@ -99,7 +99,7 @@ export const Task = () => {
 
 											<div className="task-controls">
 												<span
-													className="material-icons-outlined md-30 task-control-btn"
+													className="material-icons-outlined fs-30 task-control-btn"
 													onClick={(e) => {
 														e.preventDefault();
 														setTask(item);
@@ -108,7 +108,7 @@ export const Task = () => {
 												>
 													edit
 												</span>
-												<span className="material-icons-outlined md-30 task-control-btn" 
+												<span className="material-icons-outlined fs-30 task-control-btn" 
 													onClick={()=>{
 														setTask(item);
 														navigate(`/pomodoro/${item._id}`)
@@ -117,7 +117,7 @@ export const Task = () => {
 													timelapse
 												</span>
 												<span
-													className="material-icons-outlined md-30 task-control-btn"
+													className="material-icons-outlined fs-30 task-control-btn"
 													onClick={() => deleteTask(item._id)}
 												>
 													delete
