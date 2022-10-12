@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export function Aside() {
 	const sidebarMenuClass = ({ isActive }) =>
-		isActive ? "side-bar-menu active-link" : "side-bar-menu";
+		isActive ? "menu-item active-link" : "menu-item";
 
 	return (
 		<>
@@ -20,7 +20,7 @@ export function Aside() {
 					</NavLink>
 
 					<NavLink to="/user-profile" className={sidebarMenuClass}>
-						<span className="material-icons-outlined fs-30">account_circle</span>
+						<span className="material-icons fs-30">account_circle</span>
 						<span className="menu-text">Profile</span>
 					</NavLink>
 				</div>

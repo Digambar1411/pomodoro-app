@@ -21,6 +21,16 @@
 	box-sizing: border-box;
 }
 
+.mobile-menu-item{
+	font-size: 1.10rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1rem;
+	color: var(--font-color);
+	text-decoration: none;
+}
+
 .default-navigation{
 	display: revert;
 }
@@ -91,7 +101,7 @@
 }
 
 .mobile-aside > ul >li{
-	padding:10px 12px;
+	/* padding:10px 12px; */
 	list-style: none;
 	font-size: 1.10rem;
 	cursor:pointer;

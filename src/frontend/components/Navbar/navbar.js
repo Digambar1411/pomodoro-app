@@ -1,6 +1,6 @@
 import "./navbar.css";
 import { useTheme, useAuth } from "../../contexts";
-import { useNavigate, Link, NavLink} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 
@@ -33,25 +33,46 @@ export function Navbar() {
 				</div>
 				<ul>
 					<li>
-						<Link to="/task" onClick={toggleMobileMenus}>
-							Task
+						<Link to="/task" onClick={toggleMobileMenus} className="mobile-menu-item">
+							<span className="material-icons-outlined fs-30">add_task</span>
+							<span className="menu-text"> Add Task</span>
 						</Link>
 					</li>
 
 					<li>
-						<Link to="/task" onClick={toggleMobileMenus}>
-							Timer
+						<Link to="/task" onClick={toggleMobileMenus} className="mobile-menu-item">
+							<span className="material-icons-outlined fs-30">alarm_on</span>
+							<span className="menu-text"> Timer</span>
 						</Link>
 					</li>
 
 					<li>
-						<Link to="/user-profile" onClick={toggleMobileMenus}>
-							Profile
+						<Link to="/user-profile" onClick={toggleMobileMenus} className="mobile-menu-item">
+							<span className="material-icons-outlined fs-30">account_circle</span>
+							<span className="menu-text">Profile</span>
 						</Link>
 					</li>
 
-					<li onClick={()=>toggleTheme()}>
-						{ theme==="light" ? "Dark" : "Light"}
+					<li onClick={()=>toggleTheme()} >
+					{ theme==="light" ? 
+						<div className="mobile-menu-item">	
+							<span
+								className="material-icons fs-30 "
+							>
+								dark_mode
+							</span>
+							<span className="menu-text">Dark</span>
+						</div>
+						:
+						<div className="mobile-menu-item">
+							<span
+								className="material-icons-outlined fs-30"
+							>
+								light_mode
+							</span>
+							<span className="menu-text">Light</span>
+						</div>
+					}
 					</li>
 				</ul>
 			</div>
@@ -104,10 +125,10 @@ export function Navbar() {
 
 						{isLoggedIn ? (
 							<span
-								className="material-icons-outlined fs-36 profile"
+								className="material-icons fs-36 profile ml-8"
 								onClick={() => navigate("/user-profile")}
 							>
-								person
+								account_circle
 							</span>
 						) : (
 							<>
