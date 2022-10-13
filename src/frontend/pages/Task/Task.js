@@ -38,16 +38,19 @@ export const Task = () => {
 		const getAllTask = async () => {
 			try {
 				const response = await GetTaskService(token);
-				taskDispatch({
-					type: "UPDATE_TASK",
-					payload: response.data.habits,
-				});
+				if(response.status===201){
+					taskDispatch({
+						type: "UPDATE_TASK",
+						payload: response.data.habits,
+					});
+				}
+				
 			} catch (error) {
 				console.log(error);
 			}
 		};
 		getAllTask();
-	}, [taskDispatch]); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [taskDispatch, token]); // eslint-disable-line react-hooks/exhaustive-deps
 
 
 	return (
@@ -64,7 +67,7 @@ export const Task = () => {
 						<div className="header space-btwn">
 							<p className="to-do-title">To-Do-List</p>
 							<h2
-								className="add-btn material-icons-outlined fs-30"
+								className="add-btn-circle material-icons-outlined fs-30 bold"
 								onClick={toggleTaskCard}
 							>
 								add
