@@ -15,7 +15,7 @@
 }
 
 .task-container {
-	background-color: var(--secondary-background-color);
+	background-color: var(--background-accent-two);
 	height: max-content;
 	border-radius: 10px;
 	display: flex;
@@ -49,9 +49,6 @@
 .add-btn-circle {
 	padding: 0.5rem;
 	border-radius: 50%;
-}
-
-.add-btn-circle:hover {
 	background-color: var(--brand-color);
 }
 
