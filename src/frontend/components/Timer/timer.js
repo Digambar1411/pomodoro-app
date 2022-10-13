@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 export const Timer = ({ task }) => {
-	const initialTimer = 60 * Number(task.time);
-	const defaultBreak = 60 * 5;
+	const initialTimer = 60 * Number(task.time) || 60 * 25;
+	const defaultBreak = 60 * 2;
 	const [breakOn, setBreakOn] = useState(false);
 	const [timerOn, setTimerOn] = useState(false);
 	const [value, setValue] = useState(initialTimer);
@@ -35,10 +35,14 @@ export const Timer = ({ task }) => {
 		if (timerOn) {
 			if (value >0) {
 				const intervalId = setInterval(() => {
-					setValue((initialTimer) => initialTimer - 1);
+					setValue((value) => value - 1);
 				}, 1000);
 				return () => clearInterval(intervalId);
-			}		
+			}
+			else if(value===0){
+				setTimerOn(false)
+				setValue(breakOn ? defaultBreak : initialTimer)
+			}
 		}
 	}, [timerOn, value]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -62,7 +66,7 @@ export const Timer = ({ task }) => {
 	return (
 		<>
 			<div className="container">
-				<div className="outer-div" style={{background:`conic-gradient(#1DB954 ${progress}%, #cff4db 1%)`}}>
+				<div className="outer-div" style={{background:`conic-gradient(#1DB954 ${progress}%, #cff4db ${progress}%)`}}>
 					<div className="inner-div">
 						<div className="inner-content center">
 							<p className="pomodor-time bold">{getTime(value)}</p>

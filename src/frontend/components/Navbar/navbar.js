@@ -16,7 +16,7 @@ export function Navbar() {
 
 	return (
 		<>
-			<div className={mobileNav ? "mobile-aside" : "hidden"}>
+			<div className={mobileNav ? "mobile-aside" : "hidden-nav"}>
 				<div className="aside-header">
 					<section className="brand-logo-section center">
 						<img src={logo} alt="logo" />
@@ -132,11 +132,11 @@ export function Navbar() {
 							</span>
 						) : (
 							<>
-								<Link to="/login" className="control-btn">
+								<Link to="/login" className="control-btn ml-8">
 									Login
 								</Link>
 								<button
-									className="control-btn"
+									className="control-btn ml-8"
 									onClick={() => navigate("/signup")}
 								>
 									sign up

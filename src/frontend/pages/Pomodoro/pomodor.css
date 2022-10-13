@@ -11,7 +11,6 @@
     height: 19.5rem;
     width: 19.5rem;
     border-radius: 50%;
-    background: conic-gradient(var(--brand-color) 90%, #93f5b2 1%);
     display: grid;
     place-items: center;
 }

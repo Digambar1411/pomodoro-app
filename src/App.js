@@ -9,7 +9,7 @@ function App() {
     <>
       <div className="app">
         <Navbar />
-        <div>
+        <div >
           <Aside />
           <div className="main-page">
               <Routes>
@@ -19,6 +19,12 @@ function App() {
                 <Route path="/task" element={ 
                   < PrivateRoutes>
                     <Task /> 
+                  </PrivateRoutes>} 
+                />
+
+                <Route path="/pomodoro" element={   
+                  < PrivateRoutes>
+                    <Pomodoro />
                   </PrivateRoutes>} 
                 />
                 
@@ -39,7 +45,6 @@ function App() {
         </div>
       </div>
     </>
-    
   )
 }
 

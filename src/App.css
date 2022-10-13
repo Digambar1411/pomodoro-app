@@ -20,14 +20,17 @@
     justify-content: space-between;
     flex-grow: 1;
     box-sizing: border-box;
-    height: 80vh;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    padding-top: 8rem;
+    border-left: 1px solid var(--light-border-color);
 }
 
 
 @media only screen and (min-width:284px) and (max-width:767px){  
 	.main-page{
         margin-left:0px;
-        
     }
 
     .aside{
