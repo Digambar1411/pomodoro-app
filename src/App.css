@@ -13,22 +13,30 @@
     color: var(--font-color);
 }
 
-.main-body-container{
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+.main-page{
+    margin-left: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    box-sizing: border-box;
+    min-height: 100vh;
+    height: auto;
     position: relative;
-   
-
+    padding-top: 8rem;
+    border-left: 1px solid var(--light-border-color);
 }
 
-.main-page{
-    border-left: 1px solid var(--light-border-color);
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    flex-grow: 1;
-    min-height: 80vh;
+
+@media only screen and (min-width:284px) and (max-width:767px){  
+	.main-page{
+        margin-left:0px;
+    }
+
+    .aside{
+        display: none;
+    }
+
 }
 
 

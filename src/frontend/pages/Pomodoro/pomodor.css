@@ -5,26 +5,23 @@
     align-items: center;
     padding: 1rem;
     box-sizing: border-box;
-
 }
 
 .outer-div{
-    height: 300px;
-    width: 300px;
+    height: 19.5rem;
+    width: 19.5rem;
     border-radius: 50%;
-    background: conic-gradient(var(--brand-color) 90%, #93f5b2 1%);
     display: grid;
     place-items: center;
 }
 
 .inner-div{
-    width:250px;
-    height:250px;
+    height: 16.5rem;
+    width: 16.5rem;
     border-radius:50%; 
     background-color: var(--primary-background-color);
     display: grid;
     place-items: center;
-
 }
 
 .inner-content{
@@ -33,15 +30,64 @@
     padding: 1rem;
 }
 
+.pomodor-controls{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .pomodor-time{
     font-size: 2.5rem;
 }
 
-.pomodor-default{
+.pomodor-default-title{
     margin: 0 auto;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    letter-spacing:4px;
+    text-transform: uppercase;
 }
 
 .bold{
     font-weight: bold;
 }
+
+.timer-btn{
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.secondary{
+    border: 1px solid var(--font-color);
+    font-size: 1.5rem;
+    width:1.5rem;
+    height:1.5rem;
+}
+
+.primary{
+    color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+    font-size:2rem;
+    width:2.5rem;
+    height:2.5rem;
+}
+
+
+@media only screen and (min-width:284px) and (max-width:540px){  
+	.container{
+        gap: 2.5rem;
+    }
+
+    .outer-div{
+        height: 15.5rem;
+        width: 15.5rem;
+    }
+    
+    .inner-div{
+        height: 13rem;
+        width: 13rem;
+    }
+}
+
+
+

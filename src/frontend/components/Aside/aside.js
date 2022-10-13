@@ -3,26 +3,28 @@ import { NavLink } from "react-router-dom";
 
 export function Aside() {
 	const sidebarMenuClass = ({ isActive }) =>
-		isActive ? "side-bar-menu active-link" : "side-bar-menu";
+		isActive ? "menu-item active-link" : "menu-item";
 
 	return (
 		<>
-			<aside className="aside ">
-				<NavLink to="/task" className={sidebarMenuClass}>
-					<span className="material-icons-outlined md-30">add_task</span>
-					<div className="menu-text"> Add Task</div>
-				</NavLink>
+			<div className="aside">
+				<div className="lists">
+					<NavLink to="/task" className={sidebarMenuClass}>
+						<span className="material-icons-outlined fs-30">add_task</span>
+						<span className="menu-text"> Add Task</span>
+					</NavLink>
 
-				<NavLink to="/pomodoro" className={sidebarMenuClass}>
-					<span className="material-icons-outlined md-30">alarm_on</span>
-					<div className="menu-text"> Timer</div>
-				</NavLink>
+					<NavLink to="/pomodoro" className={sidebarMenuClass}>
+						<span className="material-icons-outlined fs-30">alarm_on</span>
+						<span className="menu-text"> Timer</span>
+					</NavLink>
 
-				<NavLink to="/user-profile" className={sidebarMenuClass}>
-					<span className="material-icons-outlined md-30">account_circle</span>
-					<div className="menu-text">Profile</div>
-				</NavLink>
-			</aside>
+					<NavLink to="/user-profile" className={sidebarMenuClass}>
+						<span className="material-icons fs-30">account_circle</span>
+						<span className="menu-text">Profile</span>
+					</NavLink>
+				</div>
+			</div>
 		</>
 	);
 }
