@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-Preview Link : https://neo-focus.netlify.app/
+Preview Link : https://my-focus.netlify.app/
 
 ## Run Locally
 
