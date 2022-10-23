@@ -19,9 +19,9 @@ Clone the project
 - Task page
 - Timer page
 - Authentication
-  - Login
-  - Sigup
-  - Guest Login
+  - *Login*
+  - *Signup*
+  - *Guest Login*
 - Resposive Web app
 
 ## Tech Stack
